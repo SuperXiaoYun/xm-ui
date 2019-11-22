@@ -1,6 +1,13 @@
 <template>
-<div style="margin:0 auto;font-weight: bold;">
-  <h1>团队建设</h1>
+  <div style="margin:0 auto;">
+    <mt-header :title="currentMonthRate">
+      <router-link to="/" slot="left">
+        <mt-button icon="back"></mt-button>
+      </router-link>
+    </mt-header>
+    <div class="blackFontL">
+      哈哈哈
+    </div>
     <!--<Layout>
             <Header>
                 <div>
@@ -101,13 +108,14 @@
             </Content>
             <Footer class="layout-footer-center">2019-11-21 &copy; Fish</Footer>
         </Layout>-->
-</div>
+  </div>
 </template>
 
-<style>
-    .blackFontL{
-        font-size: large;
-    }
+<style lang="scss">
+  .blackFontL {
+    font-size: large;
+    color: $primary-color;
+  }
     .grayFont{
         color: gray;
     }
@@ -120,7 +128,7 @@
  export default {
         data () {
             return {
-                currentMonthRate:20,
+            currentMonthRate: '当前团队每单提成20%',
                 currentTeamBuilding:2,
                 total:12,
                 curMonth:{
