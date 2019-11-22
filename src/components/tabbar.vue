@@ -36,7 +36,7 @@ export default {
     };
   },
   watch: {
-    selected: function(val, oldVal) {
+    selected: function (val, oldVal) {
       // 这里就可以通过 val 的值变更来确定
       switch (val) {
         case "首页":

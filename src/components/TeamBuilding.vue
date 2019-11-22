@@ -1,6 +1,7 @@
 <template>
 <div style="margin:0 auto;font-weight: bold;">
-    <Layout>
+  <h1>团队建设</h1>
+    <!--<Layout>
             <Header>
                 <div>
                     当前团队每单提成{{currentMonthRate}}%
@@ -99,7 +100,7 @@
                 </List>
             </Content>
             <Footer class="layout-footer-center">2019-11-21 &copy; Fish</Footer>
-        </Layout>
+        </Layout>-->
 </div>
 </template>
 

@@ -1,9 +1,9 @@
 <template>
   <div class="home-page">
     <div class="home-page-header">
-      <div class="header-serach">
+      <!--<div class="header-serach">
         <mt-search class="search-component"></mt-search>
-      </div>
+      </div>-->
       <div class="header-post">
         <img src="../assets/images/advert.png" alt />
       </div>
