@@ -5,10 +5,12 @@ import MintUI from 'mint-ui'
 import 'mint-ui/lib/style.css'
 import axios from 'axios';
 import QS from 'qs'
+import common from './script/common/common'
 
 Vue.use(MintUI);
 Vue.prototype.$axios = axios;
 Vue.prototype.qs = QS;
+Vue.use(common);
 
 new Vue({
   el: '#app',

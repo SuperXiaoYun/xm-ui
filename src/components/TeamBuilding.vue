@@ -10,12 +10,12 @@
       </router-link>
     </mt-header>
     <div id="div_currentTeamBuilding">
-      <p>当月团建</p>
+      <p>当月发展下线人数</p>
       {{currentTeamBuilding}}
     </div>
 
-    <div>
-      <p>全部</p>
+    <div id="div_total">
+      <p>下线总人数</p>
       {{total}}
     </div>
     <table id="layout_table" border="0">
@@ -62,15 +62,6 @@
         </td>
       </tr>
     </table>
-    <!--<List item-layout="vertical">
-      <ListItem v-for="item in data" :key="item.key">
-        <ListItemMeta :avatar="item.avatar" :title="item.phone" :description="item.joinDate" />
-        <template slot="extra">
-          {{ item.content }}
-        </template>
-      </ListItem>
-    </List>-->
-
     <ul v-infinite-scroll="loadMore"
         infinite-scroll-disabled="loading"
         infinite-scroll-distance="10"
@@ -80,7 +71,10 @@
           <tr style="height: 60px;">
             <td><img :src="item.avatar" style="width: 30px;" /></td>
             <td style="text-align: left;"><span>{{item.phone}}<br /><span class="grayFont" style="font-weight: 100;font-size: small;">{{item.joinDate}}</span></span></td>
-            <td><span class="grayFont" style="font-size: small;font-weight: 600;">{{item.content}}</span></td>
+            <td>
+              <span class="grayFont" style="font-size: small;font-weight: 600;">订单数量:{{item.orderNum}}</span><br />
+              <span class="grayFont" style="font-size: small;font-weight: 600;">订单收入:{{item.orderEarn}}</span>
+            </td>
           </tr>
         </table>
       </li>

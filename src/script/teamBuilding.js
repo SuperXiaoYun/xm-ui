@@ -2,7 +2,7 @@ import https from '../https.js'
 export default {
   data() {
     return {
-      currentMonthRate: '当前团队每单提成20%',
+      currentMonthRate: '当月提成比例20%',
       currentTeamBuilding: 2,
       total: 12,
       curMonth: {
@@ -26,21 +26,24 @@ export default {
           phone: '186****5502',
           joinDate: '2019-11-21加入',
           avatar: 'https://dev-file.iviewui.com/userinfoPDvn9gKWYihR24SpgC319vXY8qniCqj4/avatar',
-          content: '订单数量:2'
+          orderNum: 2,
+          orderEarn:50
         },
         {
           key: 2,
           phone: '186****5502',
           joinDate: '2019-11-21加入',
           avatar: 'https://dev-file.iviewui.com/userinfoPDvn9gKWYihR24SpgC319vXY8qniCqj4/avatar',
-          content: '订单数量:2'
+          orderNum: 2,
+          orderEarn: 50
         },
         {
           key: 3,
           phone: '186****5502',
           joinDate: '2019-11-21加入',
           avatar: 'https://dev-file.iviewui.com/userinfoPDvn9gKWYihR24SpgC319vXY8qniCqj4/avatar',
-          content: '订单数量:2'
+          orderNum: 2,
+          orderEarn: 50
         }
       ]
     }
