@@ -1,7 +1,7 @@
 <style lang="scss" scoped>
-  @import '../style/teamBuilding.scss';
+  @import '@/style/teamBuilding.scss';
 </style>
-<script src="../script/teamBuilding.js"></script>
+<script src="@/script/teamBuilding.js"></script>
 <template>
   <div id="div_content">
     <mt-header :title="currentMonthRate">

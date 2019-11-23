@@ -1,7 +1,7 @@
 <style lang="scss" scoped>
-  @import '../style/orderDetail.scss';
+  @import '@/style/orderDetail.scss';
 </style>
-<script src="../script/orderDetail.js"></script>
+<script src="@/script/orderDetail.js"></script>
 <template>
   <div id="div_content">
     <mt-header :title="pageTitle">

@@ -1,3 +1,4 @@
+import { MessageBox } from 'mint-ui';
 import * as types from '@/script/store/types'
 import { setTimeout } from 'timers';
 
@@ -14,23 +15,14 @@ export default {
   methods: {
     submit() {
       if (!this.form.phone || !this.form.password) {
-        this.$indicator.open({
-          text: '登录中....',
-          spinnerType: 'fading-circle'
-        });
-        var self = this.$indicator;
-        setTimeout(function () {
-          self.close();
-        }, 2000);
+        MessageBox.alert('请输入手机号和密码!');
         return;
-      } 
-      if (this.token) {
-        this.$store.commit(types.LOGIN, this.token)
-        let redirect = decodeURIComponent(this.$route.query.redirect || '/');
-        this.$router.push({
-          path: redirect
-        })
       }
+      this.$store.commit(types.LOGIN, this.form);
+      let redirect = decodeURIComponent(this.$route.query.redirect || '/');
+      this.$router.push({
+        path: redirect
+      })
     },
   },
   mounted() {

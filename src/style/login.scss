@@ -1,0 +1,90 @@
+.login {
+  overflow-y: auto;
+
+  .loginreg_body {
+    position: absolute;
+    left: 10%;
+    top: 150px;
+    width: 80%;
+
+    .loginreg_input {
+      border: 1px solid #fff;
+      border-radius: 10px;
+      height: 40px;
+      margin-bottom: 20px;
+      display: flex;
+      display: -webkit-flex;
+      align-items: center;
+      -webkit-align-items: center;
+
+      .label {
+        width: 30px;
+        margin: 0 10px;
+      }
+
+      input {
+        flex: 1;
+        -webkit-flex: 1;
+        margin-right: 10px;
+        height: 36px;
+        background: transparent;
+        border: none;
+        outline: none;
+      }
+    }
+
+    .forget_password_p {
+      text-align: right;
+      color: #cccccc;
+      font-size: 14px;
+    }
+
+    .loginreg_button {
+      display: flex;
+      display: -webkit-flex;
+      align-items: center;
+      -webkit-align-items: center;
+      justify-content: center;
+      -webkit-justify-content: center;
+      margin: 15px auto;
+
+      button {
+        background: #4caf50;
+        border-radius: 10px;
+        height: 40px;
+        width: 80%;
+        border: none;
+        color: #ffffff;
+        font-size: 14px;
+      }
+
+      .loginreg_p_line {
+        width: 50px;
+        height: 1px;
+        background: #fff;
+        margin: 0;
+      }
+
+      #register {
+        margin: 0 10px;
+        color: #ffffff;
+        font-size: 14px;
+      }
+    }
+  }
+
+  #div_login_img {
+    width: 90px;
+    height: 90px;
+    border-radius: 50%;
+    margin: 10px auto;
+    border: solid 1px;
+    border-color: #E6E4E5;
+    padding: 2px;
+
+    #img_login {
+      border-radius: 50%;
+      width: 90px;
+    }
+  }
+}

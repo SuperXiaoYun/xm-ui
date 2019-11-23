@@ -1,10 +1,17 @@
+<style lang="scss" scoped>
+  @import '@/style/login.scss';
+</style>
 <script src="@/script/login"></script>
 <template>
   <div class="login">
     <mt-header title="登录">
       <router-link to="/" slot="left">
+        <mt-button icon="back"></mt-button>
       </router-link>
     </mt-header>
+    <div id="div_login_img">
+      <img id="img_login" src="@/assets/images/icon/icon_login.jpg" />
+    </div>
     <div class="loginreg_body">
       <div class="loginreg_input">
         <!--<img class="label" src="@/assets/images/icon/4102.png" />-->
@@ -26,78 +33,4 @@
     </div>
   </div>
 </template>
-<style scoped lang="scss">
-.login {
-  overflow-y: auto;
-  .close {
-    position: absolute;
-    left: 20px;
-    top: 10px;
-    width: 20px;
-  }
-  .loginreg_body {
-    position: absolute;
-    left: 10%;
-    top: 150px;
-    width: 80%;
 
-    .loginreg_input {
-      border: 1px solid #fff;
-      border-radius: 10px;
-      height: 40px;
-      margin-bottom: 20px;
-      display: flex;
-      display: -webkit-flex;
-      align-items: center;
-      -webkit-align-items: center;
-      .label {
-        width: 30px;
-        margin: 0 10px;
-      }
-      input {
-        flex: 1;
-        -webkit-flex: 1;
-        margin-right: 10px;
-        height: 36px;
-        background: transparent;
-        border: none;
-        outline: none;
-      }
-    }
-    .forget_password_p {
-      text-align: right;
-      color: #cccccc;
-      font-size: 14px;
-    }
-    .loginreg_button {
-      display: flex;
-      display: -webkit-flex;
-      align-items: center;
-      -webkit-align-items: center;
-      justify-content: center;
-      -webkit-justify-content: center;
-      margin: 15px auto;
-      button {
-        background: #4caf50;
-        border-radius: 10px;
-        height: 40px;
-        width: 80%;
-        border: none;
-        color: #ffffff;
-        font-size: 14px;
-      }
-      .loginreg_p_line {
-        width: 50px;
-        height: 1px;
-        background: #fff;
-        margin: 0;
-      }
-      #register {
-        margin: 0 10px;
-        color: #ffffff;
-        font-size: 14px;
-      }
-    }
-  }
-}
-</style>

@@ -72,7 +72,6 @@ export default {
     }
   },
   mounted: function () {
-
   }
 }
 
