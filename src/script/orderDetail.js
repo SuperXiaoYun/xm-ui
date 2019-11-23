@@ -1,52 +1,40 @@
-import https from '../https.js'
+import orderDetailApi from '../script/api/orderDetailApi'
+
 export default {
   data() {
     return {
-      selected: 1,
+      pageTitle: '我的订单',
+      selected: "1",
       totalOrders: [],
       submittedOrder: [],
       confirmedOrder: [],
       invalidOrder: [],
-      currentMonthRate: '我的订单',
-      currentTeamBuilding: 2,
-      total: 12,
-      curMonth: {
-        award: '2*2=4',
-        num: 4,
-        deduct: 8
+      curCommissionTotal: 12,
+      curOrderData: {
+        submitted: 0,
+        confirmed: 2,
+        invalid: 0
       },
-      previousMonth: {
-        award: '2*2=4',
-        num: 3,
-        deduct: 13
-      },
-      nextMonth: {
-        singleDeduct: 20,
-        needNum: 3,
-        upDeduct: 30
+      preOrderData: {
+        submitted: 0,
+        confirmed: 2,
+        invalid: 0
       },
     }
   },
   methods: {
     // 请求后台数据==================
-    getData(date) {
+    getMyOrderList(userId) {
       var this_ = this
       this_.check = false
-      var jobj = { data: { 'menuDate': date, 'token': this.base.token } }
-      let string = JSON.stringify(jobj)
-      let params = { dailyInfo: string }
-      https.fetchPost('/meals/mobile/getDailyMenuByDate', params)
-        .then((data) => {
-          this_.base.indexData = data
-          this_.check = true
-          // console.log('thenthenthenthen',data)
-        })
-        .catch((err) => {
-          console.log(err)
-
-        })
+      orderDetailApi.Api_get_getMyOrderList(userId).then((data) => {
+        //Success
+      }).catch((err) => {
+        console.log(err)
+      })
     }
   },
+  //onload
   mounted: function () {
     for (var i = 0; i < 10; i++) {
       var temp = {
@@ -58,11 +46,13 @@ export default {
       };
       this.submittedOrder.push(temp);
 
-      temp.status = '已确认';
-      this.confirmedOrder.push(temp);
+      var temp3 = JSON.parse(JSON.stringify(temp));
+      temp3.status = '已确认';
+      this.confirmedOrder.push(temp3);
 
-      temp.status = '已失效';
-      this.invalidOrder.push(temp);
+      var temp4 = JSON.parse(JSON.stringify(temp));
+      temp4.status = '已失效';
+      this.invalidOrder.push(temp4);
     }
     this.totalOrders = this.submittedOrder.concat(this.confirmedOrder).concat(this.invalidOrder);
   }

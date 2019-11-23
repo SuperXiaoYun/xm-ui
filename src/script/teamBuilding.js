@@ -1,4 +1,5 @@
-import https from '../https.js'
+import teamBuildingApi from '../script/api/teamBuildingApi'
+
 export default {
   data() {
     return {
@@ -50,22 +51,14 @@ export default {
   },
   methods: {
     // 请求后台数据==================
-    getData(date) {
+    getData() {
       var this_ = this
       this_.check = false
-      var jobj = { data: { 'menuDate': date, 'token': this.base.token } }
-      let string = JSON.stringify(jobj)
-      let params = { dailyInfo: string }
-      https.fetchPost('/meals/mobile/getDailyMenuByDate', params)
-        .then((data) => {
-          this_.base.indexData = data
-          this_.check = true
-          // console.log('thenthenthenthen',data)
-        })
-        .catch((err) => {
-          console.log(err)
-
-        })
+      teamBuildingApi.Api_get_getTeamBuildingData().then((data) => {
+        //Success
+      }).catch((err) => {
+        console.log(err)
+      })
     },
     loadMore() {
       this.loading = true;
@@ -79,6 +72,7 @@ export default {
     }
   },
   mounted: function () {
+
   }
 }
 

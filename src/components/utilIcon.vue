@@ -52,7 +52,7 @@
     </ul>
   </div>
 </template>
-<style>
+<style scoped>
 .icon_list {
   font-size: 14px;
   display: flex;
