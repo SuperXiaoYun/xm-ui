@@ -1,7 +1,7 @@
 <template>
   <mt-tabbar fixed v-model="selected">
     <mt-tab-item id="首页">
-      <img src="../assets/images/home.png" with:35px height:36px />
+      <img slot="icon" src="../assets/images/home.png" with:35px height:36px />
       首页
     </mt-tab-item>
     <mt-tab-item id="订单">
@@ -21,6 +21,7 @@
 <style>
 .mint-tabbar {
   bottom: 0;
+  height: 60px;
 }
 .mint-tabbar > .mint-tab-item.is-selected {
   background-color: transparent;
@@ -36,7 +37,7 @@ export default {
     };
   },
   watch: {
-    selected: function (val, oldVal) {
+    selected: function(val, oldVal) {
       // 这里就可以通过 val 的值变更来确定
       switch (val) {
         case "首页":

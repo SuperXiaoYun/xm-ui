@@ -85,9 +85,10 @@ export default {
   width: 100%;
   background-image: url("../assets/images/background.png");
   background-size: 100% 100%;
+  display: flex;
+  flex-direction: column;
 }
 .home-page-header {
-  position: fixed;
   background-color: orange;
   height: 200px;
   width: 100%;
@@ -125,12 +126,9 @@ export default {
   height: 10px;
 }
 .home-page-body {
-  margin-top: 200px;
   /* background-color: aqua; */
-  height: 70%;
-  width: 90%;
-  margin-left: auto;
-  margin-right: auto;
+  width: 100%;
+  flex: 1;
 }
 .test {
   position: relative;
