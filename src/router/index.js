@@ -1,34 +1,77 @@
 import Vue from 'vue'
-import Router from 'vue-router'
+import VueRouter from 'vue-router'
+import store from '@/script/store/store'
+import * as types from '@/script/store/types'
 import Personal from '@/components/PersonalCenter'
 import TeamBuilding from '@/components/TeamBuilding'
 import OrderDetail from '@/components/OrderDetail'
 import Home from '@/components/Home'
+import Login from '@/components/login'
+
+Vue.use(VueRouter)
+
+const routes = [
+  {
+    path: '/',
+    name: 'Home',
+    component: Home
+  },
+  {
+    path: '/login',
+    name: 'login',
+    component: Login
+  },
+  {
+    path: '/personal',
+    name: 'Personal',
+    component: Personal,
+    meta: {
+      requireAuth: true,  // 添加该字段，表示进入这个路由是需要登录的
+    },
+  },
+  {
+    path: '/teamBuilding',
+    name: 'Team Building',
+    component: TeamBuilding,
+    meta: {
+      requireAuth: true,  // 添加该字段，表示进入这个路由是需要登录的
+    },
+  },
+  {
+    path: '/orderDetail',
+    name: 'Order Detail',
+    component: OrderDetail,
+    meta: {
+      requireAuth: true,  // 添加该字段，表示进入这个路由是需要登录的
+    },
+  },
+];
 
 
-Vue.use(Router)
+// 页面刷新时，重新赋值token
+if (window.localStorage.getItem('token')) {
+  store.commit(types.LOGIN, window.localStorage.getItem('token'))
+}
 
-export default new Router({
-  routes: [
-    {
-      path: '/',
-      name: 'Home',
-      component: Home
-    },
-    {
-      path: '/personal',
-      name: 'Personal',
-      component: Personal
-    },
-    {
-      path: '/teamBuilding',
-      name: 'Team Building',
-      component: TeamBuilding
-    },
-    {
-      path: '/orderDetail',
-      name: 'Order Detail',
-      component: OrderDetail
+const router = new VueRouter({
+  routes
+});
+
+router.beforeEach((to, from, next) => {
+  if (to.matched.some(r => r.meta.requireAuth)) {
+    if (store.state.token) {
+      next();
     }
-  ]
+    else {
+      next({
+        path: '/login',
+        query: { redirect: to.fullPath }
+      })
+    }
+  }
+  else {
+    next();
+  }
 })
+
+export default router;
