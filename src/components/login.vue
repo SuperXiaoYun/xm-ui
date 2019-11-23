@@ -1,18 +1,17 @@
+<script src="@/script/login"></script>
 <template>
   <div class="login">
     <mt-header title="登录">
       <router-link to="/" slot="left">
-        <mt-button icon="back">返回</mt-button>
-        <mt-button @click="handleClose">close</mt-button>
       </router-link>
     </mt-header>
     <div class="loginreg_body">
       <div class="loginreg_input">
-        <img class="label" src="@/assets/images/icon/4102.png" />
+        <!--<img class="label" src="@/assets/images/icon/4102.png" />-->
         <input id="userTel" type="number" placeholder="输入手机号" v-model="form.phone" />
       </div>
       <div class="loginreg_input">
-        <img class="label" src="@/assets/images/icon/4101.png" />
+        <!--<img class="label" src="@/assets/images/icon/4101.png" />-->
         <input id="password" type="password" placeholder="输入密码" v-model="form.password" />
       </div>
       <p class="forget_password_p">忘记密码?</p>
@@ -28,15 +27,6 @@
   </div>
 </template>
 <style scoped lang="scss">
-#background {
-  position: absolute;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  top: 0;
-  width: 100%;
-  height: 100%;
-}
 .login {
   overflow-y: auto;
   .close {
@@ -50,6 +40,7 @@
     left: 10%;
     top: 150px;
     width: 80%;
+
     .loginreg_input {
       border: 1px solid #fff;
       border-radius: 10px;
@@ -110,27 +101,3 @@
   }
 }
 </style>
-<script>
-import { mapActions } from "vuex";
-import { USER_SIGNIN } from "@/store/modules/user";
-
-export default {
-  data() {
-    return {
-      form: {
-        phone: "",
-        password: ""
-      }
-    };
-  },
-  methods: {
-    ...mapActions([USER_SIGNIN]),
-    submit() {
-      this.btn = true;
-      if (!this.form.phone || !this.form.password) return;
-      this.USER_SIGNIN(this.form);
-      this.$router.replace({ path: "/" });
-    }
-  }
-};
-</script>

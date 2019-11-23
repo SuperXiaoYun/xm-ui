@@ -1,0 +1,164 @@
+.home-page {
+  height: 100%;
+  width: 100%;
+  background-image: url("../assets/images/background.png");
+  background-size: 100% 100%;
+}
+
+.home-page-header {
+  position: fixed;
+  background-color: orange;
+  height: 200px;
+  width: 100%;
+  top: 0px;
+  z-index: 999;
+}
+
+.header-serach {
+  width: 100%;
+  height: 60px;
+}
+
+.header-post {
+  width: 90%;
+  height: 85px;
+  margin-left: auto;
+  margin-right: auto;
+  border: 1px solid;
+  border-radius: 50%;
+}
+
+.header-post img {
+  width: 100%;
+  height: 100%;
+}
+
+.header-joblist {
+  width: 90%;
+  height: 50px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.header-joblist img {
+  width: 100%;
+  height: 100%;
+}
+
+.header-search {
+  width: 100%;
+  height: 10px;
+}
+
+.home-page-body {
+  margin-top: 200px;
+  /* background-color: aqua; */
+  height: 70%;
+  width: 90%;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.product-list {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  left: -40px;
+  top: 10px;
+  font-size: small;
+  font-weight: 900;
+  font-family: monospace;
+  margin-bottom: 100px;
+}
+
+.product {
+  position: relative;
+  width: 100%;
+}
+
+.product-wrapper {
+  position: relative;
+  width: 100%;
+  height: 260px;
+  margin-top: 5px;
+}
+
+.product1 {
+  position: relative;
+  width: 50%;
+  height: 260px;
+  float: left;
+}
+
+.product1-top {
+  position: relative;
+  width: 100%;
+  height: 150px;
+  background-color: #D1D1D1;
+  display: flex;
+  align-items: center;
+  border-radius: 5px 5px 0 0;
+}
+
+.product1-top img {
+  /*width: 80%;
+  height: 80%;*/
+}
+
+.product1-bottom {
+  position: relative;
+  height: 100px;
+  background-color: white;
+  text-align: left;
+  padding: 5px;
+  border-radius: 0 0 5px 5px;
+}
+
+.product2 {
+  position: relative;
+  width: 48%;
+  height: 260px;
+  float: right;
+  text-align: left;
+}
+
+.product2-top {
+  position: relative;
+  width: 100%;
+  height: 150px;
+  background-color: #D1D1D1;
+  border-radius: 5px 5px 0 0;
+}
+
+.product2-bottom {
+  position: relative;
+  height: 100px;
+  background-color: white;
+  text-align: left;
+  padding: 5px;
+  border-radius: 0 0 5px 5px;
+}
+
+.product-top {
+  position: relative;
+  width: 50%;
+  height: 400px;
+}
+
+.product-wrapper {
+  position: relative;
+  width: 100%;
+}
+
+.product1-size1 {
+  margin-top: 5px;
+  -webkit-transform-origin-x: 0;
+  -webkit-transform: scale(0.90);
+}
+
+.big-red {
+  color: #D70202;
+  margin: 0 5px;
+  font-size: 20px;
+}
+
