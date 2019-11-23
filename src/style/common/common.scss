@@ -1,0 +1,26 @@
+$font-stack: Helvetica, sans-serif;
+$primary-color: #0E0C0F;
+$bgcolor: whitesmoke;
+
+body {
+  font: 100% $font-stack;
+  color: $primary-color;
+}
+
+.thin-gray {
+  color: gray;
+  font-size: 12px !important;
+  font-weight: 100;
+}
+
+.bg-whitesmoke {
+  background-color: whitesmoke;
+}
+
+.mg-b10{
+  margin-bottom:10px;
+}
+
+.mg-lr5 {
+  margin:0 5px;
+}

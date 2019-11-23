@@ -1,172 +1,83 @@
-<template>
-<div style="margin:0 auto;font-weight: bold;">
-  <h1>团队建设</h1>
-    <!--<Layout>
-            <Header>
-                <div>
-                    当前团队每单提成{{currentMonthRate}}%
-                </div>
-            </Header>
-            <Content :style="{padding: '0 20px'}">
-                <el-row class="blackFontL">
-                    <el-col :span="12">
-                        当月团建
-                    </el-col>
-                    <el-col :span="12">
-                        全部
-                    </el-col>
-                </el-row>
-                <el-row>
-                    <el-col :span="12">
-                        {{currentTeamBuilding}}
-                    </el-col>
-                    <el-col :span="12">
-                        {{total}}
-                    </el-col>
-                </el-row>
-                <el-row class="mgt10">
-                    <el-col :span="8">
-                        团队奖励
-                    </el-col>
-                    <el-col :span="8">
-                        本月团队单数
-                    </el-col>
-                    <el-col :span="8">
-                        团队提成
-                    </el-col>
-                </el-row>
-                <el-row>
-                    <el-col :span="8">
-                        {{curMonth.award}}元
-                    </el-col>
-                    <el-col :span="8">
-                        {{curMonth.num}}单
-                    </el-col>
-                    <el-col :span="8">
-                        {{curMonth.deduct}}元
-                    </el-col>
-                </el-row>
-                <el-row class="grayFont mgt10">
-                    <el-col :span="8">
-                        上月团队奖励
-                    </el-col>
-                    <el-col :span="8">
-                        上月团队单数
-                    </el-col>
-                    <el-col :span="8">
-                        上月团队提成
-                    </el-col>
-                </el-row>
-                <el-row class="grayFont">
-                    <el-col :span="8">
-                        {{previousMonth.award}}元
-                    </el-col>
-                    <el-col :span="8">
-                        {{previousMonth.num}}单
-                    </el-col>
-                    <el-col :span="8">
-                        {{previousMonth.deduct}}元
-                    </el-col>
-                </el-row>
-                <el-row class="mgt10">
-                    <el-col :span="8">
-                        下月每单提成
-                    </el-col>
-                    <el-col :span="8">
-                        升级还需团建
-                    </el-col>
-                    <el-col :span="8">
-                        升级每单提成
-                    </el-col>
-                </el-row>
-                <el-row>
-                    <el-col :span="8">
-                        {{nextMonth.singleDeduct}}%
-                    </el-col>
-                    <el-col :span="8">
-                        {{nextMonth.needNum}}
-                    </el-col>
-                    <el-col :span="8">
-                        {{nextMonth.upDeduct}}%
-                    </el-col>
-                </el-row>
-                <List item-layout="vertical">
-                    <ListItem v-for="item in data" :key="item.key">
-                        <ListItemMeta :avatar="item.avatar" :title="item.phone" :description="item.joinDate" />
-                        <template slot="extra">
-                            {{ item.content }}
-                        </template>
-                    </ListItem>
-                </List>
-            </Content>
-            <Footer class="layout-footer-center">2019-11-21 &copy; Fish</Footer>
-        </Layout>-->
-</div>
-</template>
-
-<style>
-    .blackFontL{
-        font-size: large;
-    }
-    .grayFont{
-        color: gray;
-    }
-    .mgt10{
-        margin-top: 10px;
-    }
+<style lang="scss" scoped>
+  @import '../style/teamBuilding.scss';
 </style>
+<script src="../script/teamBuilding.js"></script>
+<template>
+  <div id="div_content">
+    <mt-header :title="currentMonthRate">
+      <router-link to="/" slot="left">
+        <mt-button icon="back"></mt-button>
+      </router-link>
+    </mt-header>
+    <div id="div_currentTeamBuilding">
+      <p>当月发展下线人数</p>
+      {{currentTeamBuilding}}
+    </div>
 
-<script scoped>
- export default {
-        data () {
-            return {
-                currentMonthRate:20,
-                currentTeamBuilding:2,
-                total:12,
-                curMonth:{
-                    award:'2*2=4',
-                    num:4,
-                    deduct:8
-                },
-                previousMonth:{
-                    award:'2*2=4',
-                    num:3,
-                    deduct:13
-                },
-                nextMonth:{
-                    singleDeduct:20,
-                    needNum:3,
-                    upDeduct:30
-                },
-                data: [
-                    {
-                        key:1,
-                        phone: '186****5502',
-                        joinDate: '2019-11-21加入',
-                        avatar: 'https://dev-file.iviewui.com/userinfoPDvn9gKWYihR24SpgC319vXY8qniCqj4/avatar',
-                        content: '订单数量:2'
-                    },
-                    {
-                        key:2,
-                        phone: '186****5502',
-                        joinDate: '2019-11-21加入',
-                        avatar: 'https://dev-file.iviewui.com/userinfoPDvn9gKWYihR24SpgC319vXY8qniCqj4/avatar',
-                        content: '订单数量:2'
-                    },
-                    {
-                        key:3,
-                        phone: '186****5502',
-                        joinDate: '2019-11-21加入',
-                        avatar: 'https://dev-file.iviewui.com/userinfoPDvn9gKWYihR24SpgC319vXY8qniCqj4/avatar',
-                        content: '订单数量:2'
-                    }
-                ]
-            }
-        },
-        methods:{
-            handl(){
-                
-            }
-        }
-    }
-</script>
+    <div id="div_total">
+      <p>下线总人数</p>
+      {{total}}
+    </div>
+    <table id="layout_table" border="0">
+      <tr style="background-color: white;">
+        <td>
+          <p>团队奖励</p>
+          {{curMonth.award}}元
+        </td>
+        <td>
+          <p>本月团队单数</p>
+          {{curMonth.num}}单
+        </td>
+        <td>
+          <p>团队提成</p>
+          {{curMonth.deduct}}元
+        </td>
+      </tr>
+      <tr class="grayFont" style="background-color: white;">
+        <td>
+          <p>上月团队奖励</p>
+          {{previousMonth.award}}元
+        </td>
+        <td>
+          <p>上月团队单数</p>
+          {{previousMonth.num}}单
+        </td>
+        <td>
+          <p>上月团队提成</p>
+          {{previousMonth.deduct}}元
+        </td>
+      </tr>
+      <tr style="background-color: white;">
+        <td>
+          <p>下月每单提成</p>
+          {{nextMonth.singleDeduct}}%
+        </td>
+        <td>
+          <p>升级还需团建</p>
+          {{nextMonth.needNum}}
+        </td>
+        <td>
+          <p>升级每单提成</p>
+          {{nextMonth.upDeduct}}%
+        </td>
+      </tr>
+    </table>
+    <ul v-infinite-scroll="loadMore"
+        infinite-scroll-disabled="loading"
+        infinite-scroll-distance="10"
+        style="position: relative;left: -20px;">
+      <li v-for="item in contactList" style="list-style: none;height: 70px;">
+        <table style="width: 100%;" bgcolor="white">
+          <tr style="height: 60px;">
+            <td><img :src="item.avatar" style="width: 30px;" /></td>
+            <td style="text-align: left;"><span>{{item.phone}}<br /><span class="grayFont" style="font-weight: 100;font-size: small;">{{item.joinDate}}</span></span></td>
+            <td>
+              <span class="grayFont" style="font-size: small;font-weight: 600;">订单数量:{{item.orderNum}}</span><br />
+              <span class="grayFont" style="font-size: small;font-weight: 600;">订单收入:{{item.orderEarn}}</span>
+            </td>
+          </tr>
+        </table>
+      </li>
+    </ul>
+  </div>
+</template>

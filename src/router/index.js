@@ -1,6 +1,5 @@
 import Vue from 'vue'
 import Router from 'vue-router'
-import Layout from '@/components/Layout'
 import Personal from '@/components/PersonalCenter'
 import TeamBuilding from '@/components/TeamBuilding'
 import OrderDetail from '@/components/OrderDetail'
