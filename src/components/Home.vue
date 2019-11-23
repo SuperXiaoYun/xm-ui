@@ -54,7 +54,6 @@ export default {
     return {
       allLoaded: false,
       topStatus: "",
-
       bottomStatus: "",
       moveTranslate: 0,
       imgList: [
@@ -87,7 +86,6 @@ export default {
   background-image: url("../assets/images/background.png");
   background-size: 100% 100%;
 }
-
 .home-page-header {
   position: fixed;
   background-color: orange;
@@ -100,7 +98,6 @@ export default {
   width: 100%;
   height: 40px;
 }
-
 .header-post {
   width: 90%;
   height: 110px;
@@ -109,29 +106,24 @@ export default {
   border: 1px solid;
   border-radius: 50%;
 }
-
 .header-post img {
   width: 100%;
   height: 100%;
 }
-
 .header-joblist {
   width: 90%;
   height: 50px;
   margin-left: auto;
   margin-right: auto;
 }
-
 .header-joblist img {
   width: 100%;
   height: 100%;
 }
-
 .header-search {
   width: 100%;
   height: 10px;
 }
-
 .home-page-body {
   margin-top: 200px;
   /* background-color: aqua; */
@@ -140,7 +132,6 @@ export default {
   margin-left: auto;
   margin-right: auto;
 }
-
 .test {
   position: relative;
   width: 100%;
@@ -157,21 +148,18 @@ export default {
   width: 100%;
   height: 200px;
 }
-
 .product-wrapper {
   position: relative;
   width: 100%;
   height: 200px;
   margin-top: 5px;
 }
-
 .product1 {
   position: relative;
   width: 45%;
   height: 200px;
   float: left;
 }
-
 .product1-top {
   position: relative;
   width: 100%;
@@ -179,44 +167,37 @@ export default {
   padding-top: 10px;
   background-color: gray;
 }
-
 .product1-top img {
   width: 80%;
   height: 80%;
 }
-
 .product1-bottom {
   position: relative;
   width: 100%;
   height: 100px;
 }
-
 .product2 {
   position: relative;
   width: 45%;
   height: 200px;
   float: right;
 }
-
 .product2-top {
   position: relative;
   width: 100%;
   height: 100px;
   background-color: gray;
 }
-
 .product2-bottom {
   position: relative;
   width: 100%;
   height: 100px;
 }
-
 .product-top {
   position: relative;
   width: 50%;
   height: 400px;
 }
-
 .product-wrapper {
   position: relative;
   width: 100%;
