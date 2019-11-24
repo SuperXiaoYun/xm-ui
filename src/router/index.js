@@ -7,6 +7,7 @@ import TeamBuilding from '@/components/teamBuilding'
 import OrderDetail from '@/components/orderDetail'
 import Home from '@/components/home'
 import Login from '@/components/login'
+import Register from '@/components/register'
 
 Vue.use(VueRouter)
 
@@ -45,6 +46,11 @@ const routes = [
       requireAuth: true,  // 添加该字段，表示进入这个路由是需要登录的
     },
   },
+  {
+    path: '/register',
+    name: 'Register',
+    component: Register,
+  },
 ];
 
 
@@ -63,6 +69,8 @@ router.beforeEach((to, from, next) => {
       next();
     }
     else {
+      if (from.name == 'login')
+        return;
       next({
         path: '/login',
         query: { redirect: to.fullPath }

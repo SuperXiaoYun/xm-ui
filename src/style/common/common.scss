@@ -1,10 +1,16 @@
 $font-stack: Helvetica, sans-serif;
-$primary-color: #0E0C0F;
+$text-color: #0E0C0F;
 $bgcolor: whitesmoke;
+$color-header: linear-gradient(#DC84FF, #946DFE);
+$color-primary: #946DFE;
 
 body {
   font: 100% $font-stack;
-  color: $primary-color;
+  color: $text-color;
+}
+
+.themefont-color {
+  color: $color-primary;
 }
 
 .thin-gray {

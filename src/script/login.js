@@ -1,6 +1,6 @@
 import { MessageBox } from 'mint-ui';
 import * as types from '@/script/store/types'
-import { setTimeout } from 'timers';
+import Intltel from '@/templates/intlTelInput/index'
 
 export default {
   data() {
@@ -11,6 +11,9 @@ export default {
       },
       token: ''
     };
+  },
+  components: {
+    Intltel
   },
   methods: {
     submit() {
@@ -24,6 +27,9 @@ export default {
         path: redirect
       })
     },
+    register() {
+      this.$router.push('/register');
+    }
   },
   mounted() {
     this.$store.commit(types.TITLE, 'Login');

@@ -5,8 +5,8 @@
 <template>
   <div id="div_content">
     <mt-header :title="currentMonthRate">
-      <router-link to="/" slot="left">
-        <mt-button icon="back"></mt-button>
+      <router-link to="" slot="left">
+        <mt-button icon="back" @click="$router.back(-1)"></mt-button>
       </router-link>
     </mt-header>
     <div id="div_currentTeamBuilding">

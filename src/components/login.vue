@@ -5,8 +5,8 @@
 <template>
   <div class="login">
     <mt-header title="登录">
-      <router-link to="/" slot="left">
-        <mt-button icon="back"></mt-button>
+      <router-link to="" slot="left">
+        <mt-button icon="back" @click="$router.back(-1)"></mt-button>
       </router-link>
     </mt-header>
     <div id="div_login_img">
@@ -14,21 +14,19 @@
     </div>
     <div class="loginreg_body">
       <div class="loginreg_input">
-        <!--<img class="label" src="@/assets/images/icon/4102.png" />-->
-        <input id="userTel" type="number" placeholder="输入手机号" v-model="form.phone" />
+        <Intltel class="label"></Intltel>
+        <div style="float:left;width: 1px;height: 44px; background: #cccccc;margin: 0 10px;"></div>
+        <input id="userTel" type="number" placeholder="输入手机号" v-model="form.phone" height="50" />
       </div>
-      <div class="loginreg_input">
-        <!--<img class="label" src="@/assets/images/icon/4101.png" />-->
+      <div class="loginreg_input" id="div_password">
         <input id="password" type="password" placeholder="输入密码" v-model="form.password" />
       </div>
-      <p class="forget_password_p">忘记密码?</p>
       <div class="loginreg_button">
-        <button id="login" type="button" @click="submit">登录</button>
+        <mt-button id="btn_login" size="large" @click="submit">确定登录</mt-button>
       </div>
-      <div class="loginreg_button">
-        <p class="loginreg_p_line"></p>
-        <a id="register">新用户注册</a>
-        <p class="loginreg_p_line"></p>
+      <div>
+        <mt-button plain id="btn_regain_password">找回密码</mt-button>
+        <mt-button plain id="btn_register" @click="register">注册</mt-button>
       </div>
     </div>
   </div>

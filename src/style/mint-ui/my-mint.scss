@@ -1,8 +1,22 @@
 /* 覆盖mint-ui的primary颜色，改为自己UI的主题色 */
-$color-primary: #C473FC;
+$color-primary: #946DFE;
+$bgcolor: whitesmoke;
+
+.mint-button--default.is-plain {
+  color: $color-primary;
+  border: 1px solid $color-primary;
+  font-size: 14px;
+}
+
+.mint-button--default {
+  background: $color-primary;
+  color: white;
+  font-size: 16px;
+}
 
 .mint-header {
-  background-color: $color-primary;
+  background: linear-gradient(#DC84FF, #946DFE);
+  font-size: 16px;
 }
 
 .mint-button:not(.is-disabled):active::after {
@@ -72,8 +86,10 @@ $color-primary: #C473FC;
 
 .mint-cell-wrapper {
   font-size: small;
+  border-bottom: solid 1px $bgcolor;
 }
 
 .mint-cell-title {
   text-align: left;
 }
+
