@@ -13,6 +13,11 @@ body {
   color: $color-primary;
 }
 
+input[type='checkbox'] {
+  vertical-align: middle;
+  margin-top: 0;
+}
+
 .thin-gray {
   color: gray;
   font-size: 12px !important;

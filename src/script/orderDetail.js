@@ -41,7 +41,7 @@ export default {
         orderId: i*125648,
         commission: i * 10,
         bussinessType: '联通王卡',
-        createTime: new Date().format("yyyy-MM-dd hh:mm:ss"),
+        createTime: new Date().Format("yyyy-MM-dd hh:mm:ss"),
         status: '已提交'
       };
       this.submittedOrder.push(temp);

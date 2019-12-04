@@ -15,6 +15,7 @@
     </mt-field>
     <mt-field label="密码" type="password" placeholder="输入密码" v-model="form.password"></mt-field>
     <mt-field label="邀请码" placeholder="确认邀请码" v-model="form.inviteCode"></mt-field>
+    <div id="read_items"><input type="checkbox" v-model="readItems" /> 阅读并同意<span id="items">《相关条款》</span></div>
     <mt-button id="btn_register" size="large" @click="submit">确定注册</mt-button>
     <mt-button plain id="btn_login" @click="login">登录</mt-button>
   </div>

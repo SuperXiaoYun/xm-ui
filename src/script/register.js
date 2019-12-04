@@ -9,6 +9,7 @@ export default {
         password: "",
         inviteCode: "",
       },
+      readItems: false,
     };
   },
   methods: {
@@ -24,6 +25,9 @@ export default {
         return;
       } else if (!this.form.inviteCode) {
         MessageBox.alert('请输入邀请码!');
+        return;
+      } else if (!this.readItems) {
+        MessageBox.alert('请阅读用户协议!');
         return;
       }
     },

@@ -24,6 +24,9 @@ export default {
           path: 'login',
           query: { redirect: router.currentRoute.path },
         })
+    },
+    agentmerchant() {
+      this.$router.push("/agentmerchant");
     }
   },
   components: {

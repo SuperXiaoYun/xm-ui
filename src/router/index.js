@@ -8,6 +8,7 @@ import OrderDetail from '@/components/orderDetail'
 import Home from '@/components/home'
 import Login from '@/components/login'
 import Register from '@/components/register'
+import Agentmerchant from '@/components/agentmerchant'
 
 Vue.use(VueRouter)
 
@@ -21,6 +22,11 @@ const routes = [
     path: '/login',
     name: 'login',
     component: Login
+  },
+  {
+    path: '/register',
+    name: 'Register',
+    component: Register,
   },
   {
     path: '/personal',
@@ -47,9 +53,12 @@ const routes = [
     },
   },
   {
-    path: '/register',
-    name: 'Register',
-    component: Register,
+    path: '/agentmerchant',
+    name: 'Agent merchant',
+    component: Agentmerchant,
+    meta: {
+      requireAuth: true,  // 添加该字段，表示进入这个路由是需要登录的
+    },
   },
 ];
 

@@ -55,6 +55,7 @@
         </div>
       </div>
     </div>
+    <mt-button type="primary" size="large" @click="agentmerchant">代理商</mt-button>
     <mt-button type="danger" size="large" @click="logout">退出登录</mt-button>
   </div>
 </template>
